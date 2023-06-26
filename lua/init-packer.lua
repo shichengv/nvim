@@ -21,6 +21,7 @@ return require('packer').startup(function(use)
     use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
     use 'L3MON4D3/LuaSnip' -- Snippets plugin
 
+    -- Markdown
     -- install without yarn or npm
     use({
         "iamcco/markdown-preview.nvim",
@@ -28,6 +29,8 @@ return require('packer').startup(function(use)
     })
 
     use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+
+
 
     -- AutoComment
     use {
