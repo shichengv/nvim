@@ -1,6 +1,5 @@
 vim.o.syntax = true
 vim.o.updatetime=100
-vim.o.clipboard='unnamedplus'
 vim.o.nu = true
 vim.o.relativenumber = true
 vim.o.hidden = true
@@ -23,4 +22,5 @@ vim.o.tw = 80
 vim.o.autoindent = true
 vim.o.encoding ='UTF-8'
 vim.g.mapleader = ' '
+vim.cmd[[set clipboard+=unnamedplus]]
 vim.cmd[[colorscheme tokyonight]]

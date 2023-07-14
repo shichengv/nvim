@@ -1,19 +1,5 @@
 local keymap = vim.api.nvim_set_keymap
 local opts={noremap= true, silent=true}
-keymap('n','H' ,'0',opts)
-keymap('n','L', '$',opts)
-keymap('n','J', '5j',opts)
-keymap('n','K', '5k',opts)
--- noremap<LEADER><CR> :nohlsearch<CR>
-keymap('n', 'sl', ':vsplit<CR>', opts)
-keymap('n', 'sk', ':split<CR>', opts)
-keymap('n', '<LEADER><CR>', ':nohlsearch<CR>', opts)
-
-keymap('n','<LEADER>e', ':NvimTreeToggle<ENTER>', opts) -- open nvimtree
-keymap('n','th', ':BufferLineCyclePrev<CR>', opts) -- switch tab
-keymap('n','tl', ':BufferLineCycleNext<CR>', opts)
-keymap('n', '<LEADER>jo', ':Joshuto<ENTER>', opts)
-
 -- Move to previous/next
 keymap('n', '<LEADER>,', '<Cmd>BufferPrevious<CR>', opts)
 keymap('n', '<LEADER>.', '<Cmd>BufferNext<CR>', opts)
@@ -35,3 +21,22 @@ keymap('n', '<LEADER>0', '<Cmd>BufferLast<CR>', opts)
 keymap('n', '<LEADER>p', '<Cmd>BufferPin<CR>', opts)
 -- Close b<LEADER>e
 keymap('n', '<LEADER>q', '<Cmd>BufferClose<CR>', opts)
+-- Wipeout buffer
+--                 :BufferWipeout
+-- Close commands
+--                 :BufferCloseAllButCurrent
+--                 :BufferCloseAllButPinned
+--                 :BufferCloseAllButCurrentOrPinned
+--                 :BufferCloseBuffersLeft
+--                 :BufferCloseBuffersRight
+-- Magic buffer-picking mode
+map('n', '<C-p>', '<Cmd>BufferPick<CR>', opts)
+-- Sort automatically by...
+map('n', '<Space>bb', '<Cmd>BufferOrderByBufferNumber<CR>', opts)
+map('n', '<Space>bd', '<Cmd>BufferOrderByDirectory<CR>', opts)
+map('n', '<Space>bl', '<Cmd>BufferOrderByLanguage<CR>', opts)
+map('n', '<Space>bw', '<Cmd>BufferOrderByWindowNumber<CR>', opts)
+
+-- Other:
+-- :BarbarEnable - enables barbar (enabled by default)
+-- :BarbarDisable - very bad command, should never be used
