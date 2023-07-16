@@ -28,7 +28,7 @@ return require('packer').startup(function(use)
         run = function() vim.fn["mkdp#util#install"]() end,
     })
 
-    use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+    -- use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
 
 
@@ -39,6 +39,25 @@ return require('packer').startup(function(use)
             require('Comment').setup()
         end
     }
+    -- Clipboard
+    -- use {
+    --     "AckslD/nvim-neoclip.lua",
+    --     config = function()
+    --         require('neoclip').setup()
+    --     end,
+    --     requires = {
+    --         {'kkharji/sqlite.lua', module = 'sqlite'},
+    --     }
+    --
+    --
+    -- }
+    use "tenxsoydev/karen-yank.nvim"
+
+    use 'nvim-lua/plenary.nvim'
+    use 'nvim-telescope/telescope.nvim'
+
+    -- terminal
+    use 'voldikss/vim-floaterm'
 
     -- Icon
     use 'kyazdani42/nvim-web-devicons'
@@ -46,9 +65,6 @@ return require('packer').startup(function(use)
     -- File Explorer
     use {
         'nvim-tree/nvim-tree.lua',
-        requires = {
-            'nvim-tree/nvim-web-devicons', -- optional
-        },
         config = function()
             require("nvim-tree").setup {}
         end
@@ -66,6 +82,8 @@ return require('packer').startup(function(use)
             require"surround".setup {mappings_style = "surround"}
         end
     }
+
+    use 'simrat39/symbols-outline.nvim'
     -- StatusLine
     use 'windwp/windline.nvim'
     -- indent
@@ -105,13 +123,8 @@ return require('packer').startup(function(use)
 
     -- colorscheme
     use 'folke/tokyonight.nvim'
-    use {
-        'lukas-reineke/headlines.nvim',
-        after = 'nvim-treesitter',
-        config = function()
-            require('headlines').setup()
-        end,
-    }
+    use 'NTBBloodbath/doom-one.nvim'
+    use 'lukas-reineke/headlines.nvim'
 
     if packer_bootstrap then
         require('packer').sync()

@@ -22,5 +22,7 @@ vim.o.tw = 80
 vim.o.autoindent = true
 vim.o.encoding ='UTF-8'
 vim.g.mapleader = ' '
+-- 系统剪切板
 vim.cmd[[set clipboard+=unnamedplus]]
-vim.cmd[[colorscheme tokyonight]]
+-- vim.cmd[[colorscheme tokyonight]]
+vim.cmd[[colorscheme doom-one]]
