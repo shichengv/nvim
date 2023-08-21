@@ -28,9 +28,6 @@ return require('packer').startup(function(use)
         run = function() vim.fn["mkdp#util#install"]() end,
     })
 
-
-
-
     -- AutoComment
     use {
         'numToStr/Comment.nvim',
@@ -38,25 +35,18 @@ return require('packer').startup(function(use)
             require('Comment').setup()
         end
     }
-    -- Clipboard
-    -- use {
-    --     "AckslD/nvim-neoclip.lua",
-    --     config = function()
-    --         require('neoclip').setup()
-    --     end,
-    --     requires = {
-    --         {'kkharji/sqlite.lua', module = 'sqlite'},
-    --     }
-    --
-    --
-    -- }
-    -- use "tenxsoydev/karen-yank.nvim"
 
     use 'nvim-lua/plenary.nvim'
     use 'nvim-telescope/telescope.nvim'
+    use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+    -- use { 'camspiers/snap' }
 
     -- terminal
+    -- use 'voldikss/vim-floaterm'
     use 'voldikss/vim-floaterm'
+    -- use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+    --   require("toggleterm").setup()
+    -- end}
 
     -- Icon
     use 'kyazdani42/nvim-web-devicons'
@@ -84,7 +74,7 @@ return require('packer').startup(function(use)
 
     use 'simrat39/symbols-outline.nvim'
     -- StatusLine
-    use 'windwp/windline.nvim'
+    use 'nvim-lualine/lualine.nvim'
     -- indent
     use "lukas-reineke/indent-blankline.nvim"
     -- git integration
@@ -120,6 +110,8 @@ return require('packer').startup(function(use)
         }
     })
 
+    -- startify
+    use "startup-nvim/startup.nvim"
     -- colorscheme
     use 'folke/tokyonight.nvim'
     use 'NTBBloodbath/doom-one.nvim'

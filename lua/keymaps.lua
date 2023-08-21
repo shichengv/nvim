@@ -14,10 +14,7 @@ keymap('n', '<A-w>', '<C-w>', opts)
 
 
 --------------------NvimTree-------------------------------
-keymap('n','<LEADER>e', ':NvimTreeToggle<ENTER>', opts) -- open nvimtree
-keymap('n','th', ':BufferLineCyclePrev<CR>', opts) -- switch tab
-keymap('n','tl', ':BufferLineCycleNext<CR>', opts)
-
+keymap('n','<LEADER>t', ':NvimTreeToggle<ENTER>', opts) -- open nvimtree
 
 ---------------------Joshuto------------------------
 keymap('n', '<LEADER>jo', ':Joshuto<ENTER>', opts)
@@ -67,7 +64,9 @@ keymap('n', '<Space>bw', '<Cmd>BufferOrderByWindowNumber<CR>', opts)
 ----------------------SymbolsOutline--------------------------------
 keymap('n', '<LEADER>s', ':SymbolsOutline<CR>', opts)
 ----------------------Open Console --------------------------------
-keymap('n', '<LEADER>c', ':FloatermNew<CR>', opts)
+-- keymap('n', '<LEADER>c', ':ToggleTerm size=18 dir=~/ direction=horizontal<CR>', opts)
+keymap('n', '<LEADER>cb', ':FloatermNew --height=0.3 --width=0.6 --wintype=split --name=floaterm1 --position=rightbelow<CR>', opts)
+keymap('n', '<LEADER>cf', ':FloatermNew --height=0.6 --width=0.8 --wintype=float --name=floaterm1 --position=center<CR>', opts)
 
 -----------------------Find File -------------------------------
 keymap('n', '<LEADER>ff', ':Telescope find_files<CR>', opts)
