@@ -1,9 +1,9 @@
 local keymap = vim.api.nvim_set_keymap
 local opts={noremap= true, silent=true}
-keymap('n','H' ,'0',opts)
-keymap('n','L', '$',opts)
-keymap('n','J', '5j',opts)
-keymap('n','K', '5k',opts)
+
+
+
+-------------------- Local Keymap -------------------------------
 -- noremap<LEADER><CR> :nohlsearch<CR>
 keymap('n', 'sl', ':vsplit<CR>', opts)
 keymap('n', 'sk', ':split<CR>', opts)
@@ -13,13 +13,18 @@ keymap('n', '<A-w>', '<C-w>', opts)
 
 
 
---------------------NvimTree-------------------------------
+-------------------- NvimTree -------------------------------
 keymap('n','<LEADER>t', ':NvimTreeToggle<ENTER>', opts) -- open nvimtree
 
----------------------Joshuto------------------------
+
+
+--------------------- Joshuto ------------------------
 keymap('n', '<LEADER>jo', ':Joshuto<ENTER>', opts)
 
---------------------BarBar---------------------------
+
+
+
+-------------------- BarBar ---------------------------
 -- Move to previous/next
 keymap('n', '<A-,>', '<Cmd>BufferPrevious<CR>', opts)
 keymap('n', '<A-.>', '<Cmd>BufferNext<CR>', opts)
@@ -61,17 +66,36 @@ keymap('n', '<Space>bw', '<Cmd>BufferOrderByWindowNumber<CR>', opts)
 -- -- :BarbarEnable - enables barbar (enabled by default)
 -- -- :BarbarDisable - very bad command, should never be used
 
-----------------------SymbolsOutline--------------------------------
+
+
+
+
+
+---------------------- SymbolsOutline --------------------------------
 keymap('n', '<LEADER>s', ':SymbolsOutline<CR>', opts)
-----------------------Open Console --------------------------------
--- keymap('n', '<LEADER>c', ':ToggleTerm size=18 dir=~/ direction=horizontal<CR>', opts)
+
+
+
+
+---------------------- Open Console --------------------------------
 keymap('n', '<LEADER>cb', ':FloatermNew --height=0.3 --width=0.6 --wintype=split --name=floaterm1 --position=rightbelow<CR>', opts)
 keymap('n', '<LEADER>cf', ':FloatermNew --height=0.6 --width=0.8 --wintype=float --name=floaterm1 --position=center<CR>', opts)
 
------------------------Find File -------------------------------
+
+
+
+---------------------- Telescope --------------------------------
 keymap('n', '<LEADER>ff', ':Telescope find_files<CR>', opts)
------------------------Registers History----------------------------
+keymap('n', '<LEADER>fg', ':Telescope live_grep<CR>', opts)
+keymap('n', '<LEADER>fb', ':Telescope buffers<CR>', opts)
+keymap('n', '<LEADER>fh', ':Telescope help_tags<CR>', opts)
+keymap('n', '<LEADER>of', ':Telescope oldfiles<CR>', opts)
+keymap('n', '<LEADER>fb', ':Telescope file_browserCR>', opts)
+keymap('n', '<LEADER>cs', ':Telescope colorscheme>', opts)
 keymap('n', '<LEADER>rr', ':Telescope registers<CR>', opts)
------------------------MarkdownPreview----------------------------
+
+
+
+----------------------- MarkdownPreview ----------------------------
 keymap('n', '<LEADER>md', ':MarkdownPreview<CR>', opts)
 

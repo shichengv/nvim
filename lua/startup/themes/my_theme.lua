@@ -16,35 +16,8 @@ for key, file in pairs(user_bookmarks) do
     user_bookmark_mappings[key] = "<cmd>e " .. file .. "<CR>"
 end
 
-local quote = require("startup.functions").quote()
-while true do
-    if require("startup.utils").longest_line(quote) <= vim.o.columns - 15 then
-        break
-    end
-    quote = require("startup.functions").quote()
-end
-local length = require("startup.utils").longest_line(quote) + 4
-
-local complete = {}
-
-table.insert(quote, 1, "")
-quote[#quote + 1] = ""
-
-table.insert(complete, "▛" .. string.rep("▀", length - 2) .. "▜")
-local function spaces(amount)
-    return string.rep(" ", amount)
-end
-for _, line in ipairs(quote) do
-    table.insert(
-        complete,
-        "▌" .. " " .. line .. spaces(length - 3 - #line) .. "▐"
-    )
-end
-table.insert(complete, "▙" .. string.rep("▄", length - 2) .. "▟")
-
--- NOTE: lua dump(vim.fn.expand("#<1")) to get newest oldfile
-
 local settings = {
+    -- every line should be same width without escaped \
     header = {
         type = "text",
         align = "center",
@@ -56,46 +29,58 @@ local settings = {
         default_color = "",
         oldfiles_amount = 0,
     },
-    body = {
-        type = "oldfiles",
+    -- name which will be displayed and command
+    footer = {
+        type = "text",
         oldfiles_directory = false,
-        align = "left",
+        align = "center",
         fold_section = false,
-        title = "Oldfiles",
+        title = "Footer",
         margin = 5,
-        content = "",
+        content = { "the quieter you become, the more you are able to hear" },
+        -- highlight = "Number",
+        highlight = "Statement",
+        default_color = "",
+        oldfiles_amount = 0,
+    },
+    body = {
+        type = "mapping",
+        oldfiles_directory = false,
+        align = "center",
+        fold_section = false,
+        title = "Basic Commands",
+        margin = 5,
+        content = {
+            { " Find File", "Telescope find_files", "<leader>ff" },
+            { " Find Word", "Telescope live_grep", "<leader>fg" },
+            { " Recent Files", "Telescope oldfiles", "<leader>of" },
+            { " File Browser", "Telescope file_browser", "<leader>fb" },
+            { " Colorschemes", "Telescope colorscheme", "<leader>cs" },
+            { " New File", "lua require'startup'.new_file()", "<leader>nf" },
+        },
         highlight = "String",
         default_color = "",
-        oldfiles_amount = 10,
+        oldfiles_amount = 0,
     },
-    -- body_2 = {
-    --     type = "oldfiles",
-    --     oldfiles_directory = true,
-    --     align = "left",
-    --     fold_section = false,
-    --     title = "",
-    --     margin = 5,
-    --     content = "",
-    --     highlight = "String",
-    --     oldfiles_amount = 5,
-    -- },
+
     bookmarks = {
         type = "text",
-        align = "left",
+        align = "center",
         margin = 5,
         content = bookmark_texts,
-        highlight = "String",
+        highlight = "Number",
     },
+
     options = {
         after = function()
             require("startup").create_mappings(user_bookmark_mappings)
             require("startup.utils").oldfiles_mappings()
         end,
-        mapping_keys = false,
-        cursor_column = 0.25,
-        empty_line_between_mappings = false,
+        mapping_keys = true,
+        cursor_column = 0.5,
+        empty_lines_between_mappings = true,
         disable_statuslines = true,
-        paddings = { 1, 1, 1, 1 },
+        paddings = { 1, 3, 3, 0 },
     },
     mappings = {
         execute_command = "<CR>",
@@ -106,9 +91,8 @@ local settings = {
     },
     colors = {
         background = "#1f2227",
-        folded_section = "#56b6c2",
+        folded_section = "#9900FF",
     },
-    parts = { "header", "body", "bookmarks" },
+    parts = { "header", "footer", "body", "bookmarks"  },
 }
-
 return settings
