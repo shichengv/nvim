@@ -24,5 +24,5 @@ vim.o.encoding ='UTF-8'
 vim.g.mapleader = ' '
 -- 系统剪切板
 vim.cmd[[set clipboard+=unnamedplus]]
--- vim.cmd[[colorscheme tokyonight]]
-vim.cmd[[colorscheme doom-one]]
+vim.opt.background = "dark"
+vim.cmd[[colorscheme nord]]

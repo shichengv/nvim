@@ -15,7 +15,7 @@ if vim.g.neovide then
     -- Setting g:neovide_transparency to a value between 0.0 and 1.0 will 
     -- set the opacity of the window to that value.
     -- vim.g.neovide_transparency = 0.8
-    vim.g.neovide_transparency = 1
+    vim.g.neovide_transparency = 0.8
     vim.g.transparency = 0.8
     vim.g.neovide_background_color = "#0f1117" .. alpha()
 

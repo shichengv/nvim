@@ -38,7 +38,6 @@ local settings = {
         title = "Footer",
         margin = 5,
         content = { "the quieter you become, the more you are able to hear" },
-        -- highlight = "Number",
         highlight = "Statement",
         default_color = "",
         oldfiles_amount = 0,
@@ -68,7 +67,7 @@ local settings = {
         align = "center",
         margin = 5,
         content = bookmark_texts,
-        highlight = "Number",
+        highlight = "Constant",
     },
 
     options = {

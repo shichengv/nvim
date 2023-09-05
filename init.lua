@@ -12,7 +12,9 @@ require('plugin-config.langlsp')
 require('plugin-config.symbols-outline')
 require('plugin-config.doom-one')
 require('plugin-config.startup')
+require('plugin-config.neocomposer')
 require('plugin-config.lualine')
+require('plugin-config.barbar')
 
 
 

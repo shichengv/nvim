@@ -10,6 +10,7 @@ keymap('n', 'sk', ':split<CR>', opts)
 keymap('n', '<LEADER><CR>', ':nohlsearch<CR>', opts)
 
 keymap('n', '<A-w>', '<C-w>', opts)
+keymap('n', 'U', '<C-r>', opts)
 
 
 
@@ -91,11 +92,19 @@ keymap('n', '<LEADER>fb', ':Telescope buffers<CR>', opts)
 keymap('n', '<LEADER>fh', ':Telescope help_tags<CR>', opts)
 keymap('n', '<LEADER>of', ':Telescope oldfiles<CR>', opts)
 keymap('n', '<LEADER>fb', ':Telescope file_browserCR>', opts)
-keymap('n', '<LEADER>cs', ':Telescope colorscheme>', opts)
+keymap('n', '<LEADER>cs', ':Telescope colorscheme<CR>', opts)
 keymap('n', '<LEADER>rr', ':Telescope registers<CR>', opts)
 
 
 
 ----------------------- MarkdownPreview ----------------------------
 keymap('n', '<LEADER>md', ':MarkdownPreview<CR>', opts)
+
+
+
+----------------------- NeoComposer : Macros ----------------------------
+
+keymap('n', '<LEADER>qe', ':EditMacros<CR>', opts)
+keymap('n', '<LEADER>qc', ':ClearNeoComposer<CR>', opts)
+
 

@@ -39,14 +39,9 @@ return require('packer').startup(function(use)
     use 'nvim-lua/plenary.nvim'
     use 'nvim-telescope/telescope.nvim'
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
-    -- use { 'camspiers/snap' }
 
     -- terminal
-    -- use 'voldikss/vim-floaterm'
     use 'voldikss/vim-floaterm'
-    -- use {"akinsho/toggleterm.nvim", tag = '*', config = function()
-    --   require("toggleterm").setup()
-    -- end}
 
     -- Icon
     use 'kyazdani42/nvim-web-devicons'
@@ -59,10 +54,6 @@ return require('packer').startup(function(use)
         end
     }
 
-    -- TabLine
-    -- These optional plugins should be loaded directly because of a bug in Packer lazy loading
-    -- use 'nvim-tree/nvim-web-devicons' -- OPTIONAL: for file icons
-    use 'lewis6991/gitsigns.nvim' -- OPTIONAL: for git status
     use 'romgrk/barbar.nvim'
 
     use {
@@ -75,10 +66,15 @@ return require('packer').startup(function(use)
     use 'simrat39/symbols-outline.nvim'
     -- StatusLine
     use 'nvim-lualine/lualine.nvim'
+    -- Enhanced Macro
+    use {
+        "ecthelionvi/NeoComposer.nvim",
+        requires = { "kkharji/sqlite.lua" }
+    }
     -- indent
     use "lukas-reineke/indent-blankline.nvim"
     -- git integration
-    -- use 'lewis6991/gitsigns.nvim'
+    use 'lewis6991/gitsigns.nvim'
     -- which-key
     use {
         "folke/which-key.nvim",
@@ -116,6 +112,8 @@ return require('packer').startup(function(use)
     use 'folke/tokyonight.nvim'
     use 'NTBBloodbath/doom-one.nvim'
     use 'lukas-reineke/headlines.nvim'
+    use 'nyoom-engineering/oxocarbon.nvim'
+    use 'shaunsingh/nord.nvim'
 
     if packer_bootstrap then
         require('packer').sync()
