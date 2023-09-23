@@ -73,7 +73,7 @@ require'barbar'.setup {
   -- Set the filetypes which barbar will offset itself for
   sidebar_filetypes = {
     NvimTree = {text = "File Explorer"},
-    Outline = {event = 'BufWinLeave', text = 'symbols-outline'},
+    Outline = {event = 'BufWinLeave', text = 'Symbols-Outline'},
   },
   no_name_tille = nil,
 }

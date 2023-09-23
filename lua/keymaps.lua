@@ -46,7 +46,7 @@ keymap('n', '<A-0>', '<Cmd>BufferLast<CR>', opts)
 -- key-- Pin/unpin buffer
 keymap('n', '<A-p>', '<Cmd>BufferPin<CR>', opts)
 -- key-- Close buffer
-keymap('n', '<A-q>', '<Cmd>BufferClose<CR>', opts)
+keymap('n', '<A-c>', '<Cmd>BufferClose<CR>', opts)
 -- Wipeout buffer
 --                 :BufferWipeout
 -- Close commands

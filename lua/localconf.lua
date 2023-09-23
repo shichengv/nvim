@@ -25,4 +25,4 @@ vim.g.mapleader = ' '
 -- 系统剪切板
 vim.cmd[[set clipboard+=unnamedplus]]
 vim.opt.background = "dark"
-vim.cmd[[colorscheme nord]]
+vim.cmd[[colorscheme oxocarbon]]
