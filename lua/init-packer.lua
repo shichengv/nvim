@@ -114,7 +114,6 @@ return require('packer').startup(function(use)
     use 'lukas-reineke/headlines.nvim'
     use 'nyoom-engineering/oxocarbon.nvim'
     use 'shaunsingh/nord.nvim'
-    use 'skadi.nvim'
 
     if packer_bootstrap then
         require('packer').sync()
