@@ -88,10 +88,10 @@ keymap('n', '<LEADER>cf', ':FloatermNew --height=0.6 --width=0.8 --wintype=float
 ---------------------- Telescope --------------------------------
 keymap('n', '<LEADER>ff', ':Telescope find_files<CR>', opts)
 keymap('n', '<LEADER>fg', ':Telescope live_grep<CR>', opts)
-keymap('n', '<LEADER>fb', ':Telescope buffers<CR>', opts)
+keymap('n', '<LEADER>bf', ':Telescope buffers<CR>', opts)
 keymap('n', '<LEADER>fh', ':Telescope help_tags<CR>', opts)
 keymap('n', '<LEADER>of', ':Telescope oldfiles<CR>', opts)
-keymap('n', '<LEADER>fb', ':Telescope file_browserCR>', opts)
+keymap('n', '<LEADER>fb', ':Telescope file_browser<CR>', opts)
 keymap('n', '<LEADER>cs', ':Telescope colorscheme<CR>', opts)
 keymap('n', '<LEADER>rr', ':Telescope registers<CR>', opts)
 

@@ -1,3 +1,17 @@
+-- My function
+local function find_root_dir(fname)
+    return vim.fs.dirname(fname)
+    -- local dir = vim.fs.dirname(fname)
+    -- local target = "pyproject.toml"
+    -- while dir ~= nil do
+    --     local path = vim.fs.join(dir, target)
+    --     if vim.fs.exists(path) and (vim.fs.is_file(path) or vim.fs.is_dir(path))
+    --         return path
+    --     end
+    --     dir = vim.fs.dirname(dir)
+    -- end
+    -- return nil
+end
 -- Setup language servers.
 -- Add additional capabilities supported by nvim-cmp
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -5,13 +19,61 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local lspconfig = require('lspconfig')
 
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
-local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver', 'bashls'}
+local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver', 'bashls', 'phpactor'}
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
         -- on_attach = my_custom_on_attach,
         capabilities = capabilities,
     }
 end
+
+-- ====== Web Development =========
+--
+--Enable (broadcasting) snippet capability for completion
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+require'lspconfig'.html.setup{
+    capabilities = capabilities,
+}
+
+require'lspconfig'.cssls.setup{
+    capabilities = capabilities,
+    root_dir = function (fname)
+        return find_root_dir(fname)
+        
+    end
+}
+
+-- ======== PHP ============
+require'lspconfig'.phpactor.setup{
+    root_dir = function(fname)
+        return find_root_dir(fname)
+    end
+}
+
+-- ======= SQL ============
+require'lspconfig'.sqlls.setup{
+    root_dir = function(fname)
+        return find_root_dir(fname)
+    end
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 -- luasnip setup
 local luasnip = require 'luasnip'
@@ -36,8 +98,8 @@ cmp.setup {
         ['<Tab>'] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
-            -- elseif luasnip.expand_or_jumpable() then
-            --     luasnip.expand_or_jump()
+                -- elseif luasnip.expand_or_jumpable() then
+                --     luasnip.expand_or_jump()
             else
                 fallback()
             end
@@ -45,8 +107,8 @@ cmp.setup {
         ['<S-Tab>'] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
-            -- elseif luasnip.jumpable(-1) then
-            --     luasnip.jump(-1)
+                -- elseif luasnip.jumpable(-1) then
+                --     luasnip.jump(-1)
             else
                 fallback()
             end
@@ -58,6 +120,9 @@ cmp.setup {
     },
 }
 
+require("cmp").config.formatting = {
+    format = require("tailwindcss-colorizer-cmp").formatter
+}
 -- local lspconfig = require('lspconfig')
 lspconfig.pyright.setup {}
 lspconfig.tsserver.setup {}

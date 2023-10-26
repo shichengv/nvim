@@ -25,4 +25,9 @@ vim.g.mapleader = ' '
 -- 系统剪切板
 vim.cmd[[set clipboard+=unnamedplus]]
 vim.opt.background = "dark"
-vim.cmd[[colorscheme oxocarbon]]
+-- vim.cmd[[colorscheme oxocarbon]]
+vim.cmd[[colorscheme tokyonight-moon]]
+-- vim.cmd[[highlight Normal guibg=none]]
+-- vim.cmd[[highlight NonText guibg=none]]
+-- vim.cmd[[highlight StatusLine ctermbg=none]]
+-- vim.cmd[[highlight StatusLineNC ctermbg=none]]

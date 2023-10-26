@@ -15,6 +15,9 @@ require('plugin-config.startup')
 require('plugin-config.neocomposer')
 require('plugin-config.lualine')
 require('plugin-config.barbar')
+require('plugin-config.telescope')
+require('plugin-config.web-tools')
+require('plugin-config.treesitter')
 
 
 

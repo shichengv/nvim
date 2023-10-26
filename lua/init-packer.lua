@@ -21,6 +21,36 @@ return require('packer').startup(function(use)
     use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
     use 'L3MON4D3/LuaSnip' -- Snippets plugin
 
+    -- Code Snippets Syntax
+    use 'nvim-treesitter/nvim-treesitter'
+
+    -- Web Development
+    -- HTML Snippets
+    use 'windwp/nvim-ts-autotag'
+    -- HTML preview
+    use({
+        'ray-x/web-tools.nvim',
+        config = function ()
+            require('nvim-ts-autotag').setup()
+        end
+    })
+
+    -- CSS color preview
+    use({
+        "roobert/tailwindcss-colorizer-cmp.nvim",
+        -- optionally, override the default options:
+        config = function()
+            require("tailwindcss-colorizer-cmp").setup({
+                color_square_width = 2,
+            })
+        end
+    })
+
+
+    -- Java
+    -- use 'mfussenegger/nvim-jdtls'
+
+
     -- Markdown
     -- install without yarn or npm
     use({
@@ -36,9 +66,14 @@ return require('packer').startup(function(use)
         end
     }
 
+    -- Telescope
     use 'nvim-lua/plenary.nvim'
     use 'nvim-telescope/telescope.nvim'
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+    use {
+        "nvim-telescope/telescope-file-browser.nvim",
+        requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+    }
 
     -- terminal
     use 'voldikss/vim-floaterm'
@@ -54,6 +89,7 @@ return require('packer').startup(function(use)
         end
     }
 
+    -- Tab Page
     use 'romgrk/barbar.nvim'
 
     use {
@@ -63,6 +99,7 @@ return require('packer').startup(function(use)
         end
     }
 
+    -- Symbol-Tree
     use 'simrat39/symbols-outline.nvim'
     -- StatusLine
     use 'nvim-lualine/lualine.nvim'
@@ -89,6 +126,7 @@ return require('packer').startup(function(use)
         end
     }
 
+    -- Neovim Noice 
     use({
         "folke/noice.nvim",
         config = function()
@@ -106,7 +144,7 @@ return require('packer').startup(function(use)
         }
     })
 
-    -- startify
+    -- Start 
     use "startup-nvim/startup.nvim"
     -- colorscheme
     use 'folke/tokyonight.nvim'
