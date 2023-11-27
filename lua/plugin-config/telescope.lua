@@ -1,4 +1,5 @@
 require("telescope").setup{
+    modifiable = true,
     extensions = {
         file_browser = {
             theme = "ivy",

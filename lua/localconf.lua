@@ -16,17 +16,18 @@ vim.o.lazyredraw = false
 vim.o.visualbell = true
 vim.o.expandtab = true
 -- vim.o.tabstop = 4
-vim.o.softtabstop=4 
-vim.o.shiftwidth=4 
+vim.o.softtabstop=4
+vim.o.shiftwidth=4
 vim.o.tw = 80
 vim.o.autoindent = true
 vim.o.encoding ='UTF-8'
 vim.g.mapleader = ' '
+vim.g.modifiable = true
 -- 系统剪切板
 vim.cmd[[set clipboard+=unnamedplus]]
 vim.opt.background = "dark"
 -- vim.cmd[[colorscheme oxocarbon]]
-vim.cmd[[colorscheme tokyonight-moon]]
+vim.cmd[[colorscheme doom-one]]
 -- vim.cmd[[highlight Normal guibg=none]]
 -- vim.cmd[[highlight NonText guibg=none]]
 -- vim.cmd[[highlight StatusLine ctermbg=none]]

@@ -19,7 +19,7 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local lspconfig = require('lspconfig')
 
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
-local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver', 'bashls', 'phpactor'}
+local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver', 'bashls'}
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
         -- on_attach = my_custom_on_attach,
@@ -41,7 +41,6 @@ require'lspconfig'.cssls.setup{
     capabilities = capabilities,
     root_dir = function (fname)
         return find_root_dir(fname)
-        
     end
 }
 
@@ -59,16 +58,11 @@ require'lspconfig'.sqlls.setup{
     end
 }
 
-
-
-
-
-
-
-
-
-
-
+require'lspconfig'.jdtls.setup{
+    root_dir = function(fname)
+        return find_root_dir(fname)
+    end
+}
 
 
 

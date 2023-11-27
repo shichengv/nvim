@@ -22,7 +22,7 @@ return require('packer').startup(function(use)
     use 'L3MON4D3/LuaSnip' -- Snippets plugin
 
     -- Code Snippets Syntax
-    use 'nvim-treesitter/nvim-treesitter'
+    use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
 
     -- Web Development
     -- HTML Snippets
@@ -48,7 +48,7 @@ return require('packer').startup(function(use)
 
 
     -- Java
-    -- use 'mfussenegger/nvim-jdtls'
+    use 'mfussenegger/nvim-jdtls'
 
 
     -- Markdown
@@ -82,12 +82,7 @@ return require('packer').startup(function(use)
     use 'kyazdani42/nvim-web-devicons'
     use 'theniceboy/joshuto.nvim'
     -- File Explorer
-    use {
-        'nvim-tree/nvim-tree.lua',
-        config = function()
-            require("nvim-tree").setup {}
-        end
-    }
+    use 'nvim-tree/nvim-tree.lua'
 
     -- Tab Page
     use 'romgrk/barbar.nvim'
@@ -143,6 +138,16 @@ return require('packer').startup(function(use)
             "rcarriga/nvim-notify",
         }
     })
+
+    -- Debug
+    use {"Pocco81/DAPInstall.nvim", branch = 'dev'}
+    -- use {"pocco81/dap-buddy", branch = 'dev'}
+    use 'mfussenegger/nvim-dap'
+    use 'theHamsta/nvim-dap-virtual-text'
+    use "rcarriga/nvim-dap-ui"
+    use 'nvim-telescope/telescope-dap.nvim'
+    use 'folke/neodev.nvim'
+    -- use 'mfussenegger/nvim-dap-python'
 
     -- Start 
     use "startup-nvim/startup.nvim"

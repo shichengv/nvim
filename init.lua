@@ -1,9 +1,12 @@
 require('init-packer')
 require('keymaps')
 require('localconf')
-require('lspconf')
 require('neovide')
+require('indent')
 
+
+require('plugin-config.neodev')
+require('lspconf')
 
 require('plugin-config.indent-blankline')
 require('plugin-config.gitsigns')
@@ -18,8 +21,11 @@ require('plugin-config.barbar')
 require('plugin-config.telescope')
 require('plugin-config.web-tools')
 require('plugin-config.treesitter')
+require('plugin-config.nvim-tree')
 
-
+require('dap.dap-virtual-text')
+require('dap.dapui')
+require('dap.main')
 
 
 
