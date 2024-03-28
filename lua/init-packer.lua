@@ -140,6 +140,7 @@ return require('packer').startup(function(use)
     })
 
     -- Debug
+    use { "nvim-neotest/nvim-nio" }
     use {"Pocco81/DAPInstall.nvim", branch = 'dev'}
     -- use {"pocco81/dap-buddy", branch = 'dev'}
     use 'mfussenegger/nvim-dap'

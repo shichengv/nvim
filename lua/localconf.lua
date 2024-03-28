@@ -1,4 +1,4 @@
-vim.o.syntax = true
+-- vim.o.syntax = true
 vim.o.updatetime=100
 vim.o.nu = true
 vim.o.relativenumber = true
