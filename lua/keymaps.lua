@@ -12,6 +12,8 @@ keymap('n', '<LEADER><CR>', ':nohlsearch<CR>', opts)
 keymap('n', '<A-w>', '<C-w>', opts)
 keymap('n', 'U', '<C-r>', opts)
 
+-------------------- Funcs -------------------------------
+keymap('n', '<LEADER>h', ':lua show_nvim_help()<ENTER>', opts)
 
 
 -------------------- NvimTree -------------------------------
@@ -92,7 +94,6 @@ keymap('n', '<LEADER>fb', ':Telescope file_browser<CR>', opts)
 keymap('n', '<LEADER>bf', ':Telescope buffers<CR>', opts)
 keymap('n', '<LEADER>fh', ':Telescope help_tags<CR>', opts)
 keymap('n', '<LEADER>of', ':Telescope oldfiles<CR>', opts)
-keymap('n', '<LEADER>fb', ':Telescope file_browser<CR>', opts)
 keymap('n', '<LEADER>cs', ':Telescope colorscheme<CR>', opts)
 keymap('n', '<LEADER>rr', ':Telescope registers<CR>', opts)
 

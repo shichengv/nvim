@@ -2,7 +2,7 @@ require('init-packer')
 require('keymaps')
 require('localconf')
 require('neovide')
-require('indent')
+-- require('indent')
 
 
 require('plugin-config.neodev')
@@ -27,5 +27,5 @@ require('dap.dap-virtual-text')
 require('dap.dapui')
 require('dap.main')
 
-
+require('funcs.show_help')
 
